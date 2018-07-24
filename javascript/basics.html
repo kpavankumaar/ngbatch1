@@ -16,17 +16,22 @@
 			console.log('hangout in cafe');
 		}
 		var mainCourseMenu = ['jeera rice','pulka','biryani','naan','roti'];
-
+		var mainCourseItem;
 		function goToParadise(mainItem,curry){
 			for(i = 0 ; i < mainCourseMenu.length ; i = i + 1){
 					if(mainCourseMenu[i] == mainItem){
-						console.log(mainItem +' ' +curry + ' are on its way');	
+							mainCourseItem = mainItem;
 					}else{
-						console.log('item is not available');
+							mainCourseItem = 'not available'
 					}
 			}
+			if(mainCourseItem !== 'not available'){
+				console.log(mainCourseItem + 'is available');
+			}else{
+				console.log(mainCourseItem );
+			}
 		}
-		goToParadise('roti','mixedveg');
+		goToParadise('rotii','mixedveg');
 	</script>
 </body>
 </html>
