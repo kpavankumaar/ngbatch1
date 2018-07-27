@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<script type="text/javascript">
+		var num = 10;
+		var num1 = num;
+		num1 = 20;
+		console.log(num)
+		var table = {
+			color : 'darkbrown',
+			lifts: function(){
+				console.log('can hold some weight');
+			}
+		}
+		var ironTable = Object.create(table);
+		ironTable.color = 'lightblue';
+		function createTable (){
+			console.log(this);
+		}
+	</script>
+</body>
+</html>
