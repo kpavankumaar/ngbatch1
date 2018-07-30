@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		html,body,ul,li,ol{
+			padding:0px;
+			margin:0px;
+		}
+		div.container{
+			width:500px;
+			margin:auto;
+		}
+		ul li{
+			list-style-type: none;
+			float:left;
+			width:200px;
+			border:1px solid black;
+			text-align:center;
+		}
+		ul::after,ul::before{
+			content:'';
+			display: block;
+			clear:both;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div>
+			<ul>
+				<li>product Name</li>
+				<li>item cost</li>
+			</ul>
+		</div>
+	
+		<div>
+			<h3>customer name</h3>
+			<ul>
+				<li>product Name</li>
+				<li>item cost</li>
+			</ul>
+			<ul>
+				<li>product Name</li>
+				<li>item cost</li>
+			</ul>
+			<ul>
+				<li>total cost</li>
+				<li>sum of item cost</li>
+			</ul>
+		</div>
+		<div>
+			<h3>customer name</h3>
+			<ul>
+				<li>product Name</li>
+				<li>item cost</li>
+			</ul>
+			<ul>
+				<li>product Name</li>
+				<li>item cost</li>
+			</ul>
+			<ul>
+				<li>total cost</li>
+				<li>sum of item cost</li>
+			</ul>
+		</div>
+	</div>
+	
+</body>
+</html>
