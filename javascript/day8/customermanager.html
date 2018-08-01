@@ -65,22 +65,23 @@
 			</ul>
 		</div>
 	</div>
-	<script type="text/javascript" src = "data.js"></script>
 	<script type="text/javascript">
-		function cb(obj){
-			obj.firstName
-			listOfItemCosts = obj.orders.map(function(ordersObjs){
-				return ordersObjs.itemCost
-			});
-			//  [7.99, 199.99,5]
-			var totalCost = listOfItemCosts.reduce(function(acc, currentval){
-				acc = acc + currentval;
-				return acc;
-			})
-			console.log(totalCost);
+		var container = document.getElementsByClassName('container')[0];
+		var containerFirstChild = container.querySelector('div:first-child');
+
+		function cb(event){
+			console.log(event);
+			console.log('you clicked on container');
 		}
-		var custNames = data.map(cb);
-		
+		function cb1(e){
+			console.log(e);
+			console.log('you clicked on first child element');
+		}
+		// binding
+		// container.onclick = cb;
+		container.addEventListener('click', cb,true);
+		containerFirstChild.addEventListener('click',cb1,true);
+
 	</script>
 </body>
 </html>
