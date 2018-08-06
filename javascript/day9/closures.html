@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<script type="text/javascript">
+		function run(){
+			console.log('written before setTimeout');
+		};
+		// var setInt = setInterval(function(){
+		// 	console.log('print me after min 3 sec of time');
+		// },3000);
+
+		function run1(){
+			run();
+			console.log('written after setTimeout');
+			var num = 1000
+			// while(num){
+			// 	console.log('i have stopped ')
+			// 	num = num -1;
+			// }
+		}
+		// run1()
+		// function clearInt(){
+		// 	clearInterval(setInt);
+		// }
+		// clearInt();
+		for(i = 0 ; i < 10 ; i = i + 1){
+			setTimeout(function(){
+				console.log(i);
+			},0);
+		}
+
+		function employee(lang){
+			return function(name){
+				console.log(name + ' knows ' + lang);
+			}
+		}
+		var newFn = employee('english');
+		newFn('ravi');
+
+	</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
