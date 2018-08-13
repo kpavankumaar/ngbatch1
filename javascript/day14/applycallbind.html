@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>apply call bind </title>
+</head>
+<body>
+	<script type="text/javascript">
+		var obj = {
+			firstName : 'ravi'
+		};
+		function run(age,company){
+			console.log(this);
+			this.age = age
+			this.company = company;
+		}
+		run.apply(obj,[20,'nbits']);
+		function multiply(a,b){
+			console.log(a*b);
+		}
+
+		var mulOf5 = multiply.bind(this,5);
+
+
+	</script>
+</body>
+</html>

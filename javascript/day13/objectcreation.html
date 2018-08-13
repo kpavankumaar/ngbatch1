@@ -19,18 +19,26 @@
 
 		tv1.brandname = 'samsung';
 
-
+		function Chairs(woodenchairqty,plastichairqty,foldablechairqty){
+			this.woodenchair = woodenchairqty;
+			this.plastichair = plastichairqty;
+			this.foldablechair = foldablechairqty;  
+		}
 
 		function CustomerOrders(chairs,tables,shoerack){
 			// this.orderno = OrderNum;
 			console.log(this);
-			this.chairs = chairs;
+			Chairs(4, 3, 2);
+			// this.chairs = chairs;
 			this.table = tables;
 			this.shoerack = shoerack;
 		}
 		var customer1 = new CustomerOrders('neelkamal chairs','wooden table', 'metal wallmount shoerack');
 		var customer2 = new CustomerOrders('boss chairs','metal table', 'wooden shoerack');
+		Chairs.call(customer1,5,1,2);
 		// CustomerOrders('neelkamal chairs','wooden table', 'metal wallmount shoerack');
+
+
 	</script>
 
 </body>
