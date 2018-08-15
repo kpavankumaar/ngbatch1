@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Object creation</title>
+</head>
+<body>
+
+	<script type="text/javascript">
+		var brandname = 'lg';
+		var brandname1 = brandname;
+		brandname1 = 'samsung';
+
+		var tv = {
+			brandname : 'lg',
+			color: 'grey'
+
+		} 
+		var tv1 = Object.create(tv);
+
+		tv1.brandname = 'samsung';
+
+		function Chairs(woodenchairqty,plastichairqty,foldablechairqty){
+			this.woodenchair = woodenchairqty;
+			this.plastichair = plastichairqty;
+			this.foldablechair = foldablechairqty;  
+		}
+		Chairs.prototype.chairorders = function(){
+			console.log(`wooden chair quantity ${this.woodenchair}`)
+		}
+		function CustomerOrders(chairs,tables,shoerack){
+			// this.orderno = OrderNum;
+			console.log(this);
+			Chairs.call(this,4, 3, 2);
+			// this.chairs = chairs;
+			this.table = tables;
+			this.shoerack = shoerack;
+			// this.generalOrderInfo = function(){
+			// 	console.log(`orders placed by the user ${this.table}, ${this.shoerack}`)
+			// }
+		}
+
+		CustomerOrders.prototype = Object.create(Chairs.prototype);
+		CustomerOrders.prototype.generalOrderInfo = function(){
+				console.log(`orders placed by the user ${this.table}, ${this.shoerack}`)
+			}
+		CustomerOrders.prototype.constructor = CustomerOrders;
+		var customer1 = new CustomerOrders('neelkamal chairs','wooden table', 'metal wallmount shoerack');
+		var customer2 = new CustomerOrders('boss chairs','metal table', 'wooden shoerack');
+		customer2.generalOrderInfo = function(){
+			console.log(`orders placed by the user ${this.table}`)
+		}
+		Chairs.call(customer1,5,1,2);
+		// CustomerOrders('neelkamal chairs','wooden table', 'metal wallmount shoerack');
+
+
+	</script>
+
+</body>
+</html>
