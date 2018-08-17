@@ -5,16 +5,39 @@
 </head>
 <body>
 	<script type="text/javascript">
+		// 'use strict'
+		// for (i = 0 ; i < 20 ; i++){
+		// 	console.log(i)
+		// }
 		var xhr = new XMLHttpRequest();
-		// console.log(` readystate value :${xhr.readyState}`);
+			// console.log(` readystate value :${xhr.readyState}`);
 		xhr.open('GET','https://jsonplaceholder.typicode.com/posts',true);
-		// console.log(` readystate value :${xhr.readyState}`);
 
-		xhr.onreadystatechange = function(){
-			console.log(` readystate value :${xhr.readyState}`);
-			if (xhr.readyState === 4 && xhr.status === 200) {
-				console.log(typeof JSON.parse(xhr.response));
-			}	
+		var promiseObj = new Promise(callback);
+		promiseObj.then(function(res){
+			console.log(res);
+		})
+		promiseObj.catch(function(rej){
+			console.log(rej);
+			// xhr.open('GET','https://jsonplaceholder.typicode.com/posts',true);
+			// xhr.send('null');
+		})
+		function callback (resolve , reject){
+			
+			// console.log(` readystate value :${xhr.readyState}`);
+
+			xhr.onreadystatechange = function(){
+				console.log(` readystate value :${xhr.readyState}`);
+				if (xhr.readyState === 4 && xhr.status === 200) {
+
+					console.log(JSON.parse(xhr.response));
+					resolve(xhr.response);
+				}else if(xhr.readyState === 4 && xhr.status !== 200 ){
+					reject('something went wrong' + xhr.status);
+				}	
+
+			}
+				
 		}
 		var obj = {
 			username:'ravi',
