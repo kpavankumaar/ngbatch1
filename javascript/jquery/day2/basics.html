@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<div>
+		<ul>
+			<li>first</li>
+			<li>second </li>
+			<li>third</li>
+		</ul>
+	</div>
+	<input type="text" name="username" placeholder="name">
+	<button>click</button>
+<script src="jquerylib.js"></script>
+<script type="text/javascript">
+	var listItems = $('li');
+	listItems.each(function(index){
+		console.log(index)
+		console.log($(this));
+		$(this).attr('class','content')
+	})
+	var $inputVal;
+	var $btn = $('button')
+	$btn.on('click',function(){
+		$inputVal = $('input').val();
+		console.log($inputVal);
+	})
+	
+</script>
+</body>
+</html>
