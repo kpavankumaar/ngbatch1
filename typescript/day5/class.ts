@@ -1,5 +1,5 @@
 class Student{
-    protected subjects = ['javascript','Angular'];
+    subjects = ['javascript','Angular'];
     Joined(){
         console.log('we have create a Joined students list ')
     }
