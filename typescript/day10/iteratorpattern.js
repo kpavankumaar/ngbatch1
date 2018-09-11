@@ -7,26 +7,30 @@ var SelectingNumbers = /** @class */ (function () {
         this.divisor = divisor;
     }
     SelectingNumbers.prototype.next = function () {
-        console.log(this.cursor < this.arr.length);
         while (this.cursor < this.arr.length) {
-            console.log(this.arr[this.cursor] % this.divisor === 0);
+            var item = this.arr[this.cursor];
             if (this.arr[this.cursor] % this.divisor === 0) {
                 // console.log(`needed value from array  ${this.arr[this.cursor]}`)
-                var item = this.arr[this.cursor];
-                this.cursor++;
+                // this.cursor++;
                 return item;
             }
+            this.cursor++;
         }
     };
     SelectingNumbers.prototype.hasNext = function () {
         while (this.cursor < this.arr.length) {
-            if (this.arr[this.cursor++] % this.divisor === 0) {
+            this.cursor++;
+            if (this.arr[this.cursor] % this.divisor === 0) {
                 return true;
             }
-            return false;
         }
+        return false;
     };
     return SelectingNumbers;
 }());
 var findingEvenNumbers = new SelectingNumbers(arr, 2);
-console.log(findingEvenNumbers.next());
+console.log(findingEvenNumbers.next(), findingEvenNumbers.hasNext());
+console.log(findingEvenNumbers.next(), findingEvenNumbers.hasNext());
+console.log(findingEvenNumbers.next(), findingEvenNumbers.hasNext());
+console.log(findingEvenNumbers.next(), findingEvenNumbers.hasNext());
+console.log(findingEvenNumbers.next(), findingEvenNumbers.hasNext());
