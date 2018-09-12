@@ -4,5 +4,19 @@
     Welcome to {{ name }}!
   </h1>
   <input type="text" [value] = 'name' (input) = 'name = $event.target.value' placeholder="name">
-  <p>{{name}}</p>
+  <input type="text" #tval (input) = 'tval'>
+  <input type="text" #tvar (input) = 'name = tvar.value'>
+  <input type="text" [style.background-color] = 'color' #tvar1 (keyup) = 'changeColor(tvar1.value)'placeholder='changecolor'>
+  <input type="text" (keyup.enter) = 'name = $event.target.value'>
+  <input type="text" (blur) = 'name = $event.target.value'(keyup.enter) = 'name = $event.target.value'>
+  <input type="text" [(ngModel)] = 'name'>
+  <input type="text" [ngModel] = 'name' (ngModelChange) = 'name = $event.target.value'>
+  <button (click) = 'changeColor()' >toggle </button>
+  <select (change) = 'changeColor($event.target)'>
+    <option id = 'test'>Red</option>
+    <option>Green</option>
+    <option>orange</option>
+  </select>
+  <p [style.background-color] = 'color'>{{name}}</p>
+  <p>{{tval.value}}</p>
 </div>

@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   name = 'Ravi';
+  color;
+  changeColor(val){
+    this.name = val.value;
+    this.color = val.value || 'lightgrey';
+    console.log(val);
+  }
 }
