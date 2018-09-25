@@ -10,13 +10,14 @@ import { routes } from './app.route';
 import { CustomersListViewComponent } from './customers/customerslistview.component';
 import { CustomerModule } from './customer/customer.module';
 import { MenuComponent } from './core/menu.component';
-import { bootstrap } from '../../node_modules/bootstrap';
+import { OrdersComponent } from './orders/orders.component';
+
 @NgModule({
   declarations: [
-    AppComponent,CustomersComponent, CustomersListViewComponent, MenuComponent
+    AppComponent,CustomersComponent, OrdersComponent, MenuComponent
   ],
   imports: [
-    BrowserModule,FormsModule,CustomerModule, RouterModule.forRoot(routes),bootstrap
+    BrowserModule,FormsModule,CustomerModule, RouterModule.forRoot(routes)
   ],
   providers: [],
   bootstrap: [AppComponent]
