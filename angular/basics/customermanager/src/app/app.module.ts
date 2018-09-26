@@ -11,13 +11,15 @@ import { CustomersListViewComponent } from './customers/customerslistview.compon
 import { CustomerModule } from './customer/customer.module';
 import { MenuComponent } from './core/menu.component';
 import { OrdersComponent } from './orders/orders.component';
+import { CustomersModule } from './customers/customers.module';
+import { PageNotFound } from './pagenotfound.component';
 
 @NgModule({
   declarations: [
-    AppComponent,CustomersComponent, OrdersComponent, MenuComponent
+    AppComponent, OrdersComponent, MenuComponent, PageNotFound
   ],
   imports: [
-    BrowserModule,FormsModule,CustomerModule, RouterModule.forRoot(routes)
+    BrowserModule,FormsModule,CustomersModule,CustomerModule, RouterModule.forRoot(routes,{enableTracing:true})
   ],
   providers: [],
   bootstrap: [AppComponent]
