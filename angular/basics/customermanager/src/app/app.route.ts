@@ -5,9 +5,10 @@ import { OrdersComponent } from "./orders/orders.component";
 import { PageNotFound } from "./pagenotfound.component";
 
 export const routes:Routes = [
-    {path:'', redirectTo:'customers', pathMatch:'full'},
+    
     {path:'orders', component: OrdersComponent},
-    {path:'customers', loadChildren:'./customers/customers.module#CustomersModule'},
     {path:'customer', loadChildren:'./customer/customer.module#CustomerModule'},
+    {path:'customers', loadChildren:'./customers/customers.module#CustomersModule'},
+    {path:'', redirectTo:'customers', pathMatch:'full'},
     {path:'**',component:PageNotFound}
 ]
