@@ -5,19 +5,13 @@ import { NgModule } from "@angular/core";
 import { RouterModule } from "@angular/router";
 
 
-export const custroutes = [
-    {
-        path:'customers',
+const custroutes = [
+    {   path:'',
         component:CustomersComponent,
-        children:[
-            {path:'cardview',component:CustomersCardViewComponent},
-            {path:'listview',component:CustomersListViewComponent}
-        ]
-    },
-    
-    
+    }
 ]
 @NgModule({
+    declarations:[CustomersComponent,CustomersCardViewComponent,CustomersListViewComponent],
     imports:[RouterModule.forChild(custroutes)],
     exports:[RouterModule]
 })
