@@ -2,10 +2,10 @@ import { CustomersCardViewComponent } from "./customerscardview.component";
 import { CustomersComponent } from "./customers.component";
 import { CustomersListViewComponent } from "./customerslistview.component";
 import { NgModule } from "@angular/core";
-import { RouterModule } from "@angular/router";
+import { RouterModule, Routes } from "@angular/router";
 
 
-const custroutes = [
+const custroutes:Routes = [
     {   path:'',
         component:CustomersComponent,
     }

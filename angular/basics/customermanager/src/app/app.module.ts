@@ -8,16 +8,19 @@ import { AppComponent } from './app.component';
 import { RouteModule } from './route.module';
 import { MenuComponent } from './core/menu.component';
 import { RouterModule } from '@angular/router';
+import { CoreModule } from './core/coremodule';
+import { HttpClientModule } from '@angular/common/http';
+import { Service } from './core/service/service';
 
 
 @NgModule({
   declarations: [
-    AppComponent, MenuComponent
+    AppComponent
   ],
   imports: [
-    BrowserModule,FormsModule,RouterModule,RouteModule
+    BrowserModule,FormsModule,RouterModule,RouteModule,CoreModule,HttpClientModule
   ],
-  providers: [],
+  providers: [Service],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
