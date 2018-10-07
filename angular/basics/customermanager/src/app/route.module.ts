@@ -13,7 +13,7 @@ const routes:Routes = [
 ]
 @NgModule({
     declarations:[PageNotFound],
-    imports:[RouterModule.forRoot(routes),CustomersRouterModule,OrdersRouterModule],
+    imports:[RouterModule.forRoot(routes),OrdersRouterModule,CustomersRouterModule],
     exports:[RouterModule]
 })
 export class RouteModule{}
