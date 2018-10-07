@@ -3,6 +3,9 @@ import { CustomersComponent } from "./customers.component";
 import { CustomersListViewComponent } from "./customerslistview.component";
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
+import { CommonModule } from "@angular/common";
+import { SharedModule } from "../shared/sharedmodule";
+
 
 
 const custroutes:Routes = [
@@ -12,7 +15,7 @@ const custroutes:Routes = [
 ]
 @NgModule({
     declarations:[CustomersComponent,CustomersCardViewComponent,CustomersListViewComponent],
-    imports:[RouterModule.forChild(custroutes)],
+    imports:[CommonModule, SharedModule, RouterModule.forChild(custroutes)],
     exports:[RouterModule]
 })
 export class CustomersRouterModule{}
