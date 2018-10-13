@@ -7,3 +7,15 @@
 <p>name.pristine : {{name.pristine}}</p>
 <p>name.dirty : {{name.dirty}}</p>
 <button [disabled] = name.invalid (click) = 'update()'>submit</button>
+<h3>Form group</h3>
+<form [formGroup] = 'profileForm'  (ngSubmit) ='onSubmit(profileForm.value)'>
+  <input type="text" required formControlName = 'firstname' placeholder='firstname' >
+  <input type="text" formControlName = 'lastname' placeholder='lastname' >
+  <input type="text" formControlName = 'phonenumber' placeholder= 'phone number'>
+  <div formGroupName = 'address'>
+    <input type="text" formControlName = 'city' placeholder='city' >
+    <input type="text" formControlName = 'state' placeholder='state' >
+  </div>
+  
+  <button [disabled] = profileForm.invalid> Submit</button>
+</form>
