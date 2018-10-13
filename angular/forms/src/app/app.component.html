@@ -1,0 +1,9 @@
+<label>name </label>  
+<input type="text" [formControl] = 'name' required minlength="3" placeholder="username">
+
+<p>{{name.value}}</p>
+<p>name.valid : {{name.valid}}</p>
+<p>name.touched : {{name.touched}}</p>
+<p>name.pristine : {{name.pristine}}</p>
+<p>name.dirty : {{name.dirty}}</p>
+<button [disabled] = name.invalid (click) = 'update()'>submit</button>

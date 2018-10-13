@@ -19,6 +19,9 @@
       </form>
     </div>
   </nav>
-  <app-customerscardview [datainfo]= 'datacontent'  ></app-customerscardview>
-<router-outlet></router-outlet>
+  <button id = 'cardview' (click)='updateview($event)'>cardview</button>
+  <button (click)='updateview($event.target.textContent)'>listview</button>
+  <app-customerscardview *ngIf = 'cardviewflag' [datainfo]= 'datacontent'   ></app-customerscardview>
+  <app-listview *ngIf = 'listviewflag'></app-listview>
+<!-- <router-outlet></router-outlet> -->
 <app-pagination [pageNoInfo] = 'paginationnum' (sendInfo) = 'onpaginationclick($event)'></app-pagination>
